@@ -1,0 +1,72 @@
+=== Model information ===
+
+Filename:     bayesnet-tan-10000.model
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.TAN -- -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Datos_Credit_10000
+Attributes:   12
+              PaymentHistory
+              WorkHistory
+              Reliability
+              Debit
+              Income
+              RatioDebInc
+              Assets
+              Worth
+              Profession
+              FutureIncome
+              Age
+              CreditWorthiness
+
+=== Classifier model ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=12 #classindex=11
+Network structure (nodes followed by parents)
+PaymentHistory(4): CreditWorthiness Reliability
+WorkHistory(4): CreditWorthiness Reliability
+Reliability(2): CreditWorthiness FutureIncome
+Debit(3): CreditWorthiness RatioDebInc
+Income(3): CreditWorthiness Worth
+RatioDebInc(2): CreditWorthiness Income
+Assets(3): CreditWorthiness
+Worth(3): CreditWorthiness Assets
+Profession(3): CreditWorthiness FutureIncome
+FutureIncome(2): CreditWorthiness Worth
+Age(3): CreditWorthiness RatioDebInc
+CreditWorthiness(2):
+LogScore Bayes: -108066.22689647455
+LogScore BDeu: -108272.2016143487
+LogScore MDL: -108234.88230366638
+LogScore ENTROPY: -107806.60147636948
+LogScore AIC: -107899.60147636948
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     Test_Credit_1000
+Instances:     unknown (yet). Reading incrementally
+Attributes:   12
+
+=== Summary ===
+
+Correctly Classified Instances         750               75      %
+Incorrectly Classified Instances       250               25      %
+Kappa statistic                          0.4936
+Mean absolute error                      0.3443
+Root mean squared error                  0.4069
+Total Number of Instances             1000
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.790    0.298    0.762      0.790    0.776      0.494    0.833     0.841     Positive
+                 0.702    0.210    0.734      0.702    0.718      0.494    0.833     0.824     Negative
+Weighted Avg.    0.750    0.258    0.749      0.750    0.749      0.494    0.833     0.834
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 432 115 |   a = Positive
+ 135 318 |   b = Negative

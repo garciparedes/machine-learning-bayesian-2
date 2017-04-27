@@ -1,8 +1,8 @@
-=== Run information ===
+=== Model information ===
 
+Filename:     bayesnet-k2-100.model
 Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 12 -N -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
 Relation:     Datos_ Credit_100
-Instances:    100
 Attributes:   12
               PaymentHistory
               WorkHistory
@@ -16,9 +16,8 @@ Attributes:   12
               FutureIncome
               Age
               CreditWorthiness
-Test mode:    10-fold cross-validation
 
-=== Classifier model (full training set) ===
+=== Classifier model ===
 
 Bayes Network Classifier
 not using ADTree
@@ -43,29 +42,31 @@ LogScore ENTROPY: -1101.646761408325
 LogScore AIC: -1169.646761408325
 
 
-Time taken to build model: 0 seconds
+=== Re-evaluation on test set ===
 
-=== Stratified cross-validation ===
+User supplied test set
+Relation:     Test_Credit_1000
+Instances:     unknown (yet). Reading incrementally
+Attributes:   12
+
 === Summary ===
 
-Correctly Classified Instances          72               72      %
-Incorrectly Classified Instances        28               28      %
-Kappa statistic                          0.4398
-Mean absolute error                      0.3595
-Root mean squared error                  0.4513
-Relative absolute error                 71.8929 %
-Root relative squared error             90.2508 %
-Total Number of Instances              100
+Correctly Classified Instances         667               66.7    %
+Incorrectly Classified Instances       333               33.3    %
+Kappa statistic                          0.3205
+Mean absolute error                      0.3814
+Root mean squared error                  0.4734
+Total Number of Instances             1000
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.714    0.275    0.714      0.714    0.714      0.440    0.758     0.822     Negative
-                 0.725    0.286    0.725      0.725    0.725      0.440    0.758     0.702     Positive
-Weighted Avg.    0.720    0.280    0.720      0.720    0.720      0.440    0.758     0.761
+                 0.567    0.250    0.652      0.567    0.607      0.323    0.717     0.698     Negative
+                 0.750    0.433    0.677      0.750    0.711      0.323    0.717     0.706     Positive
+Weighted Avg.    0.667    0.350    0.666      0.667    0.664      0.323    0.717     0.702
 
 === Confusion Matrix ===
 
-  a  b   <-- classified as
- 35 14 |  a = Negative
- 14 37 |  b = Positive
+   a   b   <-- classified as
+ 257 196 |   a = Negative
+ 137 410 |   b = Positive

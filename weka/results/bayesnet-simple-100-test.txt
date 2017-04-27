@@ -1,0 +1,72 @@
+=== Model information ===
+
+Filename:     bayesnet-simple-100.model
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.fixed.NaiveBayes -- -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Datos_ Credit_100
+Attributes:   12
+              PaymentHistory
+              WorkHistory
+              Reliability
+              Debit
+              Income
+              RatioDebInc
+              Assets
+              Worth
+              Profession
+              FutureIncome
+              Age
+              CreditWorthiness
+
+=== Classifier model ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=12 #classindex=11
+Network structure (nodes followed by parents)
+PaymentHistory(4): CreditWorthiness
+WorkHistory(4): CreditWorthiness
+Reliability(2): CreditWorthiness
+Debit(3): CreditWorthiness
+Income(3): CreditWorthiness
+RatioDebInc(2): CreditWorthiness
+Assets(3): CreditWorthiness
+Worth(3): CreditWorthiness
+Profession(3): CreditWorthiness
+FutureIncome(2): CreditWorthiness
+Age(3): CreditWorthiness
+CreditWorthiness(2):
+LogScore Bayes: -1250.362557433673
+LogScore BDeu: -1309.2591531705802
+LogScore MDL: -1301.8807017314175
+LogScore ENTROPY: -1202.8695427326734
+LogScore AIC: -1245.8695427326734
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     Test_Credit_1000
+Instances:     unknown (yet). Reading incrementally
+Attributes:   12
+
+=== Summary ===
+
+Correctly Classified Instances         700               70      %
+Incorrectly Classified Instances       300               30      %
+Kappa statistic                          0.3882
+Mean absolute error                      0.3584
+Root mean squared error                  0.4518
+Total Number of Instances             1000
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.607    0.223    0.693      0.607    0.647      0.391    0.758     0.737     Negative
+                 0.777    0.393    0.705      0.777    0.739      0.391    0.758     0.767     Positive
+Weighted Avg.    0.700    0.316    0.699      0.700    0.697      0.391    0.758     0.753
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 275 178 |   a = Negative
+ 122 425 |   b = Positive
