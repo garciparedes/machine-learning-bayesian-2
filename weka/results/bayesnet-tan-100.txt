@@ -1,0 +1,71 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.TAN -- -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Datos_ Credit_100
+Instances:    100
+Attributes:   12
+              PaymentHistory
+              WorkHistory
+              Reliability
+              Debit
+              Income
+              RatioDebInc
+              Assets
+              Worth
+              Profession
+              FutureIncome
+              Age
+              CreditWorthiness
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=12 #classindex=11
+Network structure (nodes followed by parents)
+PaymentHistory(4): CreditWorthiness Reliability
+WorkHistory(4): CreditWorthiness RatioDebInc
+Reliability(2): CreditWorthiness RatioDebInc
+Debit(3): CreditWorthiness RatioDebInc
+Income(3): CreditWorthiness
+RatioDebInc(2): CreditWorthiness Income
+Assets(3): CreditWorthiness Worth
+Worth(3): CreditWorthiness Income
+Profession(3): CreditWorthiness FutureIncome
+FutureIncome(2): CreditWorthiness Reliability
+Age(3): CreditWorthiness RatioDebInc
+CreditWorthiness(2):
+LogScore Bayes: -1165.5869412450425
+LogScore BDeu: -1365.8472085288372
+LogScore MDL: -1326.15771528508
+LogScore ENTROPY: -1116.6224718226217
+LogScore AIC: -1207.6224718226217
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          65               65      %
+Incorrectly Classified Instances        35               35      %
+Kappa statistic                          0.3
+Mean absolute error                      0.361
+Root mean squared error                  0.488
+Relative absolute error                 72.1921 %
+Root relative squared error             97.5732 %
+Total Number of Instances              100
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.653    0.353    0.640      0.653    0.646      0.300    0.727     0.780     Negative
+                 0.647    0.347    0.660      0.647    0.653      0.300    0.727     0.675     Positive
+Weighted Avg.    0.650    0.350    0.650      0.650    0.650      0.300    0.727     0.727
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 32 17 |  a = Negative
+ 18 33 |  b = Positive
