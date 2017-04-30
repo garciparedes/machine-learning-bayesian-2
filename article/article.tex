@@ -83,6 +83,10 @@
 
 		\subsection{Resultados}
 
+
+			\paragraph{}
+			[TODO ]
+
 			\begin{figure}[h]
 				\centering
 				\begin{subfigure}{.32\textwidth}
@@ -137,6 +141,25 @@
 
 			\paragraph{}
 			[TODO ]
+
+			\begin{table}
+			\centering
+			\small
+			\begin{tabu}{ | c | c | c | c | c | c | c | c | c | c | }
+				\hline
+				\multicolumn{10}{ | c | }{Validación cruzada de 10 particiones --- $K$-Vecinos más Próximos} \\ \hline
+				\multirow{3}{*}{Datos}& \multicolumn{9}{ c |}{Tasa de Error} \\ \cline{2-10}
+															& \multicolumn{3}{ c |}{Naive Bayes} & \multicolumn{3}{ c |}{K2} & \multicolumn{3}{ c |}{TAN}\\ \cline{2-10}
+															& \emph{100} & \emph{1000} & \emph{10000} & \emph{100} & \emph{1000} & \emph{10000} & \emph{100} & \emph{1000} & \emph{10000}\\ \hline
+				Entrenamiento		& $36.000\%$	 & $31.700\%$ & $29.690\%$ & $28.000\%$	 & $36.100\%$ & $28.500\%$	& $35.000\%$ & $29.500\%$ & $28.270\%$	\\ \hline
+				Datos Test			& $30.000\%$	 & $27.800\%$ & $27.500\%$ & $33.300\%$	 & $30.400\%$ & $25.400\%$	& $33.300\%$ & $24.900\%$ & $25.000\%$	\\
+				\hline
+			\end{tabu}
+			\caption{Tasas de error obtenida a partir de distintas configuraciones de \emph{Redes Bayesianas}}
+			\label{table:error_rates}
+		\end{table}
+
+
 %-----------------------------
 %	Bibliographic references
 %-----------------------------
