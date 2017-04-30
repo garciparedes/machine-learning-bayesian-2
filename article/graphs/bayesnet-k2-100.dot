@@ -1,0 +1,13 @@
+digraph {
+PaymentHistory->Reliability
+CreditWorthiness->Reliability
+Reliability->Income
+Debit->RatioDebInc
+Income->RatioDebInc
+Income->Worth
+Assets->Worth
+CreditWorthiness->Profession
+Profession->FutureIncome
+CreditWorthiness->FutureIncome
+Reliability->FutureIncome
+}
