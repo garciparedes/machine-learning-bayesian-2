@@ -21,18 +21,12 @@
 %-----------------------------
 
 	\begin{abstract}
-		\noindent [TODO ]
+		\noindent En este documento se realiza una descripción acerca de los algoritmos de clasificación basados en generación de \emph{Redes Bayesianas} y el \emph{Teorema de Bayes} referido a la probabilidad condicionada. Además, se realizan varios experimentos utilizando las estrategias de construcción de estructura de redes bayesianas descritas previamente, sobre conjuntos de datos de distintos tamaños mediante tests de \emph{Validación Cruzada} y un conjunto de datos formado por instancias independientes del resto.
 	\end{abstract}
 
 %-----------------------------
 %	TEXT
 %-----------------------------
-	\section{Introducción}
-	\label{sec:intro}
-
-		\paragraph{}
-		[TODO ]
-
 
 	\section{Redes Bayesianas}
 	\label{sec:bayes_network}
@@ -117,7 +111,7 @@
 			Las redes generadas por el algoritmo \emph{K2} presentan una característica diferenciadora respecto del resto. En este caso no todos los atributos tienen como padre al nodo referido a la \emph{clase} (algunos a pesar de no ser la clase de destino no tienen padre). Esto se traduce de manera práctica en que dichos atributos no serán utilizados durante las fases de clasificación de nuevas instancias. La razón es la estrategia de construcción de redes seguida por este algoritmo, que añade una arista tan solo cuando la puntuación obtenida mediante el indicador de verosimilitud se mejora. Las estructuras generadas a partir de cada conjunto de datos de distinto tamaño se muestran en las figuras \ref{fig:k2_100}, \ref{fig:k2_1000} y \ref{fig:k2_10000}.
 
 			\paragraph{}
-			[TODO descripción TAN]
+			El algoritmo \emph{TAN} tal y como se ha descrito anteriormente, es una combinación del algoritmo \emph{Naive Bayes} y el algoritmo \emph{Chow Liu} obviando la clase de destino. Por tanto, debido a la primera fase de \emph{Naive Bayes}, la clase depende de todos los atributos directamente. En la fase de \emph{Chow Liu} se forman las relaciones entre atributos. Nótese que las estructuras de red formadas por \emph{TAN} tienen muchas más aristas que el resto, lo cual añade complejidad en el cálculo de probabilidades para la clasificación de nuevas instancias. Las redes generadas se muestran en las figuras  \ref{fig:tan_100}, \ref{fig:tan_1000} y \ref{fig:tan_10000}.
 
 			\begin{figure}[h]
 				\centering
@@ -181,7 +175,13 @@
 
 
 			\paragraph{}
-			[TODO ]
+			A continuación se describen los resultados a nivel de tasas de error obtenidas en los experimentos. Estos han sido resumidos en la tabla \ref{table:error_rates}. Tal y como se dijo anteriormente, los resultados obtenidos en la fase de entramiento se corresponden con una metodología de \emph{Validación Cruzada de 10 particiones}, mientras que los obtenidos en la fase de \emph{Test} son relativos a la clasificación de las instancias del conjunto de datos de $1000$ instancias a partir del modelo obtenido en la fase anterior.
+
+			\paragraph{}
+			La tendencia habitual de los tres algoritmos de clasificación es de reducir su tasa de error conforme el tamaño del conjunto de datos de entrenamiento aumenta. Sin embargo, se pueden apreciar dos casos atípicos (entrenamiento con \emph{K2}). Estos resultados pueden ser debidos a distintos factores como la generación puntual de particionamientos que hagan caer en el peor caso posible.
+
+			\paragraph{}
+			A nivel de resultados, los tres algoritmos ofrecen tasas de error similares. Debido a las pequeñas variaciones a nivel de tasas de error entre ellos, no se puede asumir que ninguno ofrezca mejores resultados que el resto sobre los conjunto de datos utilizados.
 
 			\begin{table}
 			\centering
@@ -192,11 +192,11 @@
 				\multirow{3}{*}{Datos}& \multicolumn{9}{ c |}{Tasa de Error} \\ \cline{2-10}
 															& \multicolumn{3}{ c |}{Naive Bayes} & \multicolumn{3}{ c |}{K2} & \multicolumn{3}{ c |}{TAN}\\ \cline{2-10}
 															& \emph{100} & \emph{1000} & \emph{10000} & \emph{100} & \emph{1000} & \emph{10000} & \emph{100} & \emph{1000} & \emph{10000}\\ \hline
-				Entrenamiento		& $36.000\%$	 & $31.700\%$ & $29.690\%$ & $28.000\%$	 & $36.100\%$ & $28.500\%$	& $35.000\%$ & $29.500\%$ & $28.270\%$	\\ \hline
-				Datos Test			& $30.000\%$	 & $27.800\%$ & $27.500\%$ & $33.300\%$	 & $30.400\%$ & $25.400\%$	& $33.300\%$ & $24.900\%$ & $25.000\%$	\\
+				Entrenamiento		& $36.00\%$	 & $31.70\%$ & $29.69\%$ & $28.00\%$	 & $36.10\%$ & $28.50\%$	& $35.00\%$ & $29.50\%$ & $28.27\%$	\\ \hline
+				Datos Test			& $30.00\%$	 & $27.80\%$ & $27.50\%$ & $33.30\%$	 & $30.40\%$ & $25.40\%$	& $33.30\%$ & $24.90\%$ & $25.00\%$	\\
 				\hline
 			\end{tabu}
-			\caption{Tasas de error obtenida a partir de distintas configuraciones de \emph{Redes Bayesianas}}
+			\caption{Tasas de error obtenida a partir de distintas configuraciones a nivel de estructura de \emph{Redes Bayesianas}}
 			\label{table:error_rates}
 		\end{table}
 
