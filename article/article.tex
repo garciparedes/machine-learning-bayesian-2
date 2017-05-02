@@ -32,7 +32,13 @@
 	\label{sec:bayes_network}
 
 		\paragraph{}
-		[TODO ]
+		\say{Una red bayesiana es un modelo gráfico probabilístico que representa un conjunto de variables aleatorias y sus dependencias condicionales a través de un grafo acíclico dirigido. Por ejemplo, una red bayesiana puede representar las relaciones probabilísticas entre enfermedades y síntomas. Dados los síntomas, la red puede ser usada para computar la probabilidad de la presencia de varias enfermedades.} \cite{wiki:Bayesian_network}
+
+		\paragraph{}
+		\say{Formalmente, las redes bayesianas son grafos dirigidos acíclicos cuyos nodos representan variables aleatorias en el sentido de Bayes: las mismas pueden ser cantidades observables, variables latentes, parámetros desconocidos o hipótesis. Las aristas representan dependencias condicionales; los nodos que no se encuentran conectados representan variables las cuales son condicionalmente independientes de las otras. Cada nodo tiene asociado una función de probabilidad que toma como entrada un conjunto particular de valores de las variables padres del nodo y devuelve la probabilidad de la variable representada por el nodo.} \cite{wiki:Bayesian_network}
+
+		\paragraph{}
+		Existen algoritmos eficientes que llevan a cabo la inferencia y el aprendizaje en redes bayesianas. En este documento se habla de 3 de los algoritmos de generación de estructuras de red: \emph{Naive Bayes} en la sección \ref{sec:structure_naive}, \emph{K2} en la sección \ref{sec:structure_K2} y \emph{TAN} en la sección \ref{sec:structure_tan}.
 
 		\subsection{Estructura Naive Bayes}
 		\label{sec:structure_naive}
@@ -40,21 +46,17 @@
 			\paragraph{}
 			[TODO ]
 
-
-		\subsection{Estructura TAN}
-		\label{sec:structure_tan}
-
-			\paragraph{}
-			[TODO ]
-
-
 		\subsection{Estructura K2}
 		\label{sec:structure_K2}
 
 			\paragraph{}
 			[TODO ]
 
+		\subsection{Estructura TAN}
+		\label{sec:structure_tan}
 
+			\paragraph{}
+			[TODO ]
 
 	\section{Experimentos}
 	\label{sec:experiments}
