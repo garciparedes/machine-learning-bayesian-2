@@ -44,19 +44,24 @@
 		\label{sec:structure_naive}
 
 			\paragraph{}
-			[TODO ]
+			El algoritmo \emph{Naive Bayes} genera la estructura de red suponiendo que la clase depende de todos los nodos de manera simple, por lo que se crea un árbol de altura 1 donde el padre es la variable aleatoria que representa la clase mientras que los hijos están formados por los nodos que representan las variables aleatorias de los atributos del conjunto de datos.
 
 		\subsection{Estructura K2}
 		\label{sec:structure_K2}
 
 			\paragraph{}
-			[TODO ]
+			El algoritmo de generación de redes \emph{K2} se basa en la suposición de que existe un orden total entre el conjunto de atributos y la clase del conjunto de datos. Dicha ordenación se realiza a partir del estimador de máxima similitud con corrección bayesiana, que se diferencia del de Laplace en que este varía para cada nodo. La estructura de la red se crea suponiendo que para el nodo $X_k$, puede tener como padres al subconjunto de nodos $X_1,...,X_{k-1}$ en el caso de que este mejore su puntuación.
 
 		\subsection{Estructura TAN}
 		\label{sec:structure_tan}
 
 			\paragraph{}
-			[TODO ]
+			El algoritmo \emph{TAN} (o \emph{Tree Aumented NaiveBayes}) genera la estructura de red en dos fases. La primera de ellas se corresponde con el algoritmo \emph{Naive Bayes} descrito anteriormente en la sección \ref{sec:structure_naive}. La segunda fase compone las dependencias entre atributos (no utiliza el nodo de la clase) mediante el algoritmo de \emph{Chow y Liu}, que genera el \emph{árbol recubridor máximo} a partir de la ecuación \eqref{eq:mutual_information} (información mútua entre dos variables aleatorias condicionadas a la clase).
+
+			\begin{equation}
+			\label{eq:mutual_information}
+				I_{\hat{Pr}}(X, Y | C) = \sum_{x,y} \hat{Pr}(x,y | C) log(\frac{\hat{Pr}(x,y | C)}{\hat{Pr}(x| C)\hat{Pr}(y | C)})
+			\end{equation}
 
 	\section{Experimentos}
 	\label{sec:experiments}
